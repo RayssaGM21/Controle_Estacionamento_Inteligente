@@ -1,0 +1,12 @@
+{
+    "name": "aula/controle_estacionamento_inteligente",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ma-pedroza",
+            "email": "matheusgomeszpedroza@gmail.com"
+        }
+    ],
+    "require": {}
+}

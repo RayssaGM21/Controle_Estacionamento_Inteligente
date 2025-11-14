@@ -8,8 +8,8 @@ use App\Domain\TollRules;
 
 final class CarRules implements TollRules 
 {
-    public function calculate()
+    public function calculate(int $hours)
     {
-        return;
+        return $hours * 5;
     }
 }

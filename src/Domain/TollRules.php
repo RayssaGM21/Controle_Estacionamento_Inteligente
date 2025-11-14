@@ -6,5 +6,5 @@ namespace App\Domain;
 
 interface TollRules
 {
-    public function calculate();
+    public function calculate(int $hours);
 }

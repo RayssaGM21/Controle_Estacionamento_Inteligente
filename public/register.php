@@ -1,6 +1,7 @@
 <?php
+declare(strict_types=1);
 
-
+require __DIR__ . '/initialization.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,29 +20,29 @@
             <p class="text-gray-400 mt-1">Sistema de controle de estacionamento</p>
         </div>
         <div class="bg-blue-950/30 backdrop-blur rounded-b-2xl p-8 border rounde border-amber-400">
-            <form class="grid grid-cols-2 gap-6">
+            <form method="post" action="" class="grid grid-cols-2 gap-6">
                 <div class="flex flex-col">
-                    <label for="" class="text-amber-400 text-sm mb-2 font-medium">Placa do veículo</label>
-                    <input type="text" placeholder="ABC-1234" class="px-4 py-3 bg-slate-900 placeholder-gray-500 border border-slate-700 rounded-lg text-gray-200 transition-all duration-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:outline-none">
+                    <label class="text-amber-400 text-sm mb-2 font-medium">Placa do veículo</label>
+                    <input name="plate" type="text" placeholder="ABC-1234" class="px-4 py-3 bg-slate-900 placeholder-gray-500 border border-slate-700 rounded-lg text-gray-200 transition-all duration-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:outline-none">
                 </div>
 
                 <div class="flex flex-col">
-                    <label for="" class="text-amber-400 text-sm mb-2 font-medium">Tipo de veículo</label>
-                    <select type="datetime-local" class="px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-gray-200 transition-all duration-200 cursor-pointer">
-                        <option value="" class="bg-slate-900">Carro</option>
-                        <option value="" class="bg-slate-900">Moto</option>
-                        <option value="" class="bg-slate-900">Caminhão</option>
+                    <label class="text-amber-400 text-sm mb-2 font-medium">Tipo de veículo</label>
+                    <select name="vehicleType" type="string" class="px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-gray-200 transition-all duration-200 cursor-pointer">
+                        <option value="car" class="bg-slate-900">Carro</option>
+                        <option value="motorcycle" class="bg-slate-900">Moto</option>
+                        <option value="truck" class="bg-slate-900">Caminhão</option>
                     </select>
                 </div>
 
                 <div class="flex flex-col">
-                    <label for="" class="text-amber-400 text-sm mb-2 font-medium">Horario de Entrada</label>
-                    <input type="datetime-local" class="px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-gray-200 transition-all duration-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:outline-none">
+                    <label class="text-amber-400 text-sm mb-2 font-medium">Horario de Entrada</label>
+                    <input name="entryTime" type="datetime-local" class="px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-gray-200 transition-all duration-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:outline-none">
                 </div>
 
                 <div class="flex flex-col">
-                    <label for="" class="text-amber-400 text-sm mb-2 font-medium">Horas Estacionadas</label>
-                    <input type="number" placeholder="0" min="0" step="1" class="px-4 py-3 bg-slate-900 placeholder-white border border-slate-700 rounded-lg text-gray-200 transition-all duration-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:outline-none">
+                    <label class="text-amber-400 text-sm mb-2 font-medium">Horas Estacionadas</label>
+                    <input name="parkedHours" type="number" placeholder="0" min="0" step="1" class="px-4 py-3 bg-slate-900 placeholder-white border border-slate-700 rounded-lg text-gray-200 transition-all duration-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:outline-none">
                 </div>
             </form>
             <div class="grid grid-cols-2 gap-6"></div>

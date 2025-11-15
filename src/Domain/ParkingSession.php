@@ -7,15 +7,14 @@ use DateTime;
 
 final class ParkingSession
 {
-    private int $id;
+    private ?int $id;
     private string $plate;
     private string $vehicleType;
     private int $parkedHours;
     private float $finalTariff;
     private DateTime $entryTime; 
 
-    public function __construct(int $id, string $plate, string $vehicleType, int $parkedHours, float $finalTariff, DateTime $entryTime) {
-        $this->id = $id;
+    public function __construct(string $plate, string $vehicleType, int $parkedHours, float $finalTariff, DateTime $entryTime) {
         $this->plate = $plate;
         $this->vehicleType = $vehicleType;
         $this->parkedHours = $parkedHours;

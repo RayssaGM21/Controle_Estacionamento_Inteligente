@@ -8,6 +8,7 @@ use App\Domain\TariffCalculator;
 use App\Domain\Rules\CarRules;
 use App\Domain\Rules\MotorcycleRules;
 use App\Domain\Rules\TruckRules;
+use App\Domain\ParkingSessionValidator;
 
 $calculator = new TariffCalculator([
     'car' => new CarRules(),
@@ -16,3 +17,5 @@ $calculator = new TariffCalculator([
 ]);
 
 $parkingService = new ParkingSessionService();
+
+$validator = new ParkingSessionValidator();

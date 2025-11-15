@@ -9,6 +9,7 @@ use App\Domain\Rules\CarRules;
 use App\Domain\Rules\MotorcycleRules;
 use App\Domain\Rules\TruckRules;
 use App\Domain\ParkingSessionValidator;
+use App\Domain\ParkingSessionRepository;
 
 $calculator = new TariffCalculator([
     'car' => new CarRules(),
@@ -16,6 +17,8 @@ $calculator = new TariffCalculator([
     'truck' => new TruckRules(),
 ]);
 
-$parkingService = new ParkingSessionService();
+$repository = new ParkingSessionRepository();
 
 $validator = new ParkingSessionValidator();
+
+$parkingService = new ParkingSessionService($repository, $validator, $calculator);

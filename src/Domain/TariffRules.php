@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain;
 
-interface TollRules
+interface TariffRules
 {
     public function calculate(int $hours);
 }

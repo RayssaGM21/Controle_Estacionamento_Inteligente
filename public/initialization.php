@@ -14,3 +14,5 @@ $calculator = new TariffCalculator([
     'motorcycle' => new MotorcycleRules(),
     'truck' => new TruckRules(),
 ]);
+
+$parkingService = new ParkingSessionService();

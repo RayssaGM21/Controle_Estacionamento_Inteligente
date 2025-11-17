@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 declare(strict_types=1);
 
 require __DIR__ . '/initialization.php';
@@ -6,7 +6,7 @@ require __DIR__ . '/initialization.php';
 $result = $parkingService->add($_POST);
 
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

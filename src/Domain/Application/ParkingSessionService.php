@@ -40,28 +40,64 @@ final class ParkingSessionService
             $plate, $vehicleType, $parkedHours, $finalTariff, $entryTime
         );
 
-        // ParkingSessionRepository -> Add()
+        $this->repository->add($session);
+        return ['ok' => true, 'id' => $session->id()];
 
     }
 
-    public function delete(int $id)
+    public function delete(int $id) : array
     {
+        $exist = $this->repository->getById($id);
+
+        if(!$exist) {
+            return ['ok' => false, 'errors'=> "Não foi possível encontrar esta Sessão."];
+        }
+
+        $this->repository->delete($id);
+        return ['ok' => true];
 
     }
 
-    public function update()
+    public function update(int $id, array $input) : array
     {
+        $exist = $this->repository->getById($id);
+        if (!$exist) {
+            return ['ok' => false, 'errors' => "Sessão não encontrada."];
+        }
 
+        $errors = $this->validator->validate($input);
+        if ($errors !==[]) {
+            return ['ok' => false, 'errors' => $errors];
+
+        }
+
+        $plate = strtoupper(trim((string)$input['plate']));
+        $vehicleType = strtoupper(trim((string)$input['vehicleType']));
+        $parkedHours = (int)($input['parkedHours']);
+        $entryTime = $input['entryTime'] ?? date('c');
+        $finalTariff = $this->calculator->calculate($vehicleType, $parkedHours);
+
+        $updatedSession = new ParkingSession(
+            $plate,
+            $vehicleType,
+            $parkedHours,
+            $finalTariff,
+            $entryTime
+        );
+
+        $this->repository->update($updatedSession);
+        
+        return ['ok' => true];
     }
 
-    public function getAll()
+    public function getAll() : array
     {
-
+        return $this->repository->getAll();
     }
 
-    public function getById(int $id)
+    public function getById(int $id): ?ParkingSession
     {
-
+        return $this->repository->getById($id);
     }
 }
 

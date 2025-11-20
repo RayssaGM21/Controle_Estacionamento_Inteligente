@@ -4,3 +4,114 @@
 body{
     font-family: "Nunito Sans";
 }
+
+/* ===== ESTILOS DE IMPRESSÃO ===== */
+@media print {
+    /* Mostrar elementos ocultos na impressão */
+    .print\:block {
+        display: block !important;
+    }
+
+    /* Ocultar elementos que não devem ser impressos */
+    .flex.justify-between.items-center {
+        display: none !important;
+    }
+
+    button {
+        display: none !important;
+    }
+
+    a {
+        display: none !important;
+    }
+
+    nav,
+    header,
+    footer,
+    .hidden {
+        display: none !important;
+    }
+
+    /* Remover fundos e sombras */
+    body,
+    * {
+        background: white !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* Estilo limpo para a tabela */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead {
+        background: #1f2937 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    th {
+        padding: 12px 16px !important;
+        text-align: left;
+        font-weight: 600;
+        border-bottom: 2px solid #374151 !important;
+    }
+
+    td {
+        padding: 10px 16px !important;
+        border-bottom: 1px solid #e5e7eb !important;
+    }
+
+    tbody tr:nth-child(even) {
+        background: #f9fafb !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    tfoot {
+        background: #f3f4f6 !important;
+        font-weight: 600 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    tfoot td {
+        border-top: 2px solid #374151 !important;
+        padding: 12px 16px !important;
+    }
+
+    /* Cores para a impressão */
+    .text-emerald-700 {
+        color: #059669 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Ajustar tamanhos para impressão */
+    h1 {
+        font-size: 24pt !important;
+        margin-bottom: 16px !important;
+    }
+
+    p {
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+
+    /* Evitar quebras de página no meio da tabela */
+    table {
+        page-break-inside: avoid;
+    }
+
+    tr {
+        page-break-inside: avoid;
+    }
+
+    /* Margem da página */
+    @page {
+        margin: 0.5in;
+    }
+}

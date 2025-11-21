@@ -347,10 +347,17 @@ Acesse em: `http://localhost:8000`
 
 ---
 
+## Evidências Documentadas
+
+A pasta `docs/` contém screenshots e evidências do sistema em funcionamento:
+
+---
+
 ## Participantes do Projeto
 
 | RA | Nome |
 |-------|------|
 | 2001130 | Rayssa Gomides Marconato |
-| 1998912 | Matheus Gomes	 |
+| 1998912 | Matheus Gomes |
+
 
